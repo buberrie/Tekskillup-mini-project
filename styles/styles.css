@@ -8,10 +8,6 @@
   display: none;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 header {
   background: linear-gradient(180deg, #6f7dfb 0%, #26308c 100%);
   height: 48rem;
@@ -696,6 +692,8 @@ footer .footer-links .footer-ul .social-wrapper .social {
     width: 100%;
     height: 56rem;
     z-index: 2;
+    left: 0;
+    right: 0;
     top: 0;
     opacity: 0;
     pointer-events: none;
@@ -833,6 +831,7 @@ footer .footer-links .footer-ul .social-wrapper .social {
   }
   #testimonial .testimonial-card .card {
     width: 100%;
+    box-shadow: 0px 3px 36px 0px rgba(0, 0, 0, 0.2);
   }
   #testimonial .testimonial-card .card .card-profile .profile > span:nth-child(1) {
     font-size: 1.125rem;
