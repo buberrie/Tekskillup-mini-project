@@ -247,6 +247,10 @@ $padding-mobile: 0 2em;
     display: none;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     background: $linear-gradient;
     height: 48rem;
@@ -585,6 +589,10 @@ footer {
                     font-family: $font-poppins;
                     font-weight: $normal;
 
+                    &.error {
+                        color: $color-red;
+                    }
+
                     &::placeholder {
                         color: gray;
                         font-size: 1rem;
@@ -710,8 +718,9 @@ footer {
     }
 
     @mixin button {
-        font-size: 1em;
-        padding: 0.75rem 2rem;
+        padding: .8rem 1.5rem;
+            font-size: .9rem;
+            border-radius: 20px;
     }
 
     @mixin achievement {
@@ -882,7 +891,7 @@ footer {
         }
 
         .hero-img-section {
-            // border: 1px solid red;
+            border: 1px solid red;
             position: relative;
             z-index: 1;
             width: 100%;
@@ -894,6 +903,7 @@ footer {
                 right: -5rem;
                 z-index: -2;
                 float: right;
+                object-fit: contain
             }
 
             .student-enrolled {
@@ -973,8 +983,9 @@ footer {
             }
 
             button {
+                @include button;
                 position: absolute;
-                bottom: 3rem;
+                bottom: 2rem;
                 right: 0rem;
             }
         }
@@ -999,7 +1010,9 @@ footer {
         }
 
         button {
+            @include button;
             margin-right: 3rem;
+            margin-top: 2rem;
         }
     }
 

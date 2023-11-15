@@ -8,6 +8,10 @@
   display: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
   background: linear-gradient(180deg, #6f7dfb 0%, #26308c 100%);
   height: 48rem;
@@ -545,6 +549,9 @@ footer .footer-links .contact-us .email-area input {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
+footer .footer-links .contact-us .email-area input.error {
+  color: hsl(0, 87%, 67%);
+}
 footer .footer-links .contact-us .email-area input::-moz-placeholder {
   color: gray;
   font-size: 1rem;
@@ -742,8 +749,9 @@ footer .footer-links .footer-ul .social-wrapper .social {
     line-height: 2.8125rem;
   }
   #hero-section .hero-intro button {
-    font-size: 1em;
-    padding: 0.75rem 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
   }
   #hero-section .hero-intro button > img {
     position: relative;
@@ -751,6 +759,7 @@ footer .footer-links .footer-ul .social-wrapper .social {
     right: 0.188rem;
   }
   #hero-section .hero-img-section {
+    border: 1px solid red;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -763,6 +772,8 @@ footer .footer-links .footer-ul .social-wrapper .social {
     right: -5rem;
     z-index: -2;
     float: right;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   #hero-section .hero-img-section .student-enrolled {
     position: absolute;
@@ -857,8 +868,11 @@ footer .footer-links .footer-ul .social-wrapper .social {
     margin-bottom: 1.88rem;
   }
   #testimonial .testimonial-intro button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     right: 0rem;
   }
   #our-courses {
@@ -887,7 +901,11 @@ footer .footer-links .footer-ul .social-wrapper .social {
     line-height: 2.8rem;
   }
   #our-courses button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
     margin-right: 3rem;
+    margin-top: 2rem;
   }
   #get-app {
     margin: 7.25rem 2rem;
@@ -967,8 +985,9 @@ footer .footer-links .footer-ul .social-wrapper .social {
     font-size: 1.1rem;
   }
   footer .footer-links .contact-us .email-area button {
-    font-size: 1em;
-    padding: 0.75rem 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
     width: 40%;
     height: 3rem;
     background-color: #023047;
