@@ -713,14 +713,10 @@ footer {
 }
 
 @media only screen and (max-width: 640px) {
-    html {
-        // font-size: 12px;
-    }
-
     @mixin button {
-        padding: .8rem 1.5rem;
-            font-size: .9rem;
-            border-radius: 20px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        border-radius: 20px;
     }
 
     @mixin achievement {
@@ -769,7 +765,6 @@ footer {
         }
 
         .game-title {
-
             > span:nth-child(1) {
                 width: 70%;
                 height: 5rem;
@@ -891,31 +886,31 @@ footer {
         }
 
         .hero-img-section {
-            border: 1px solid red;
             position: relative;
             z-index: 1;
             width: 100%;
+            top: 1rem;
 
             & > img {
                 width: 19.125rem;
-                height: fit-content;
+                height: 24.9375rem;
                 position: relative;
                 right: -5rem;
                 z-index: -2;
                 float: right;
-                object-fit: contain
+                object-fit: contain;
             }
 
             .student-enrolled {
                 @include achievement;
                 top: 6.56rem;
-                left: 2rem;
+                left: 1rem;
             }
 
             .rating {
                 @include achievement;
-                bottom: 10.5rem;
-                left: 1rem;
+                bottom: 5.5rem;
+                left: 0rem;
 
                 .star-icon {
                     position: relative;
@@ -1102,7 +1097,6 @@ footer {
                         margin-left: 0rem;
                         margin-bottom: 1rem;
                         font-size: 1.1rem;
-                    
                     }
 
                     button {

@@ -759,15 +759,14 @@ footer .footer-links .footer-ul .social-wrapper .social {
     right: 0.188rem;
   }
   #hero-section .hero-img-section {
-    border: 1px solid red;
     position: relative;
     z-index: 1;
     width: 100%;
+    top: 1rem;
   }
   #hero-section .hero-img-section > img {
     width: 19.125rem;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 24.9375rem;
     position: relative;
     right: -5rem;
     z-index: -2;
@@ -780,7 +779,7 @@ footer .footer-links .footer-ul .social-wrapper .social {
     width: 9.875rem;
     height: 4.625rem;
     top: 6.56rem;
-    left: 2rem;
+    left: 1rem;
   }
   #hero-section .hero-img-section .student-enrolled > span:nth-child(odd) {
     font-size: 1.5rem;
@@ -793,8 +792,8 @@ footer .footer-links .footer-ul .social-wrapper .social {
     position: absolute;
     width: 9.875rem;
     height: 4.625rem;
-    bottom: 10.5rem;
-    left: 1rem;
+    bottom: 5.5rem;
+    left: 0rem;
   }
   #hero-section .hero-img-section .rating > span:nth-child(odd) {
     font-size: 1.5rem;
