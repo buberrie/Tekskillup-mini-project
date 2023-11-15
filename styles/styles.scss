@@ -1,0 +1,1157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Raleway:wght@400;700;800;900&display=swap");
+
+.inner-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+//------------------variable declearation-------------
+//colors
+$color-orange: #da722c;
+$dark-blue: #057ada;
+$color-red: hsl(0, 87%, 67%);
+$light-blue: #e8f7fb;
+$navy-blue: #023047;
+$linear-gradient: linear-gradient(180deg, #6f7dfb 0%, #26308c 100%);
+$light-purple: #6f7dfb;
+$color-white: #ffffff;
+
+//font-family
+$font-poppins: "Poppins", sans-serif;
+$font-raleway: "Raleway", sans-serif;
+
+//font-weight
+$normal: 400;
+$bold: 500;
+$bolder: 700;
+$extra-bold: 900;
+
+//mixin
+@mixin flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin button {
+    border: none;
+    font-size: 1.125em;
+    font-family: $font-poppins;
+    border-radius: 22px;
+    color: $color-white;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-weight: $bolder;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+}
+
+@mixin achievement {
+    position: absolute;
+    width: 12.875rem;
+    height: 5.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 26px;
+    font-family: $font-poppins;
+    color: $navy-blue;
+    font-size: 1rem;
+    background-color: $color-white;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: 26px;
+        top: -0.25rem;
+        right: 0.125rem;
+        bottom: -0.25rem;
+        left: 0.125rem;
+        transform: translate(0.625rem, 0.313rem);
+        z-index: -1;
+        background: $linear-gradient;
+    }
+
+    span {
+        color: $navy-blue;
+        font-family: $font-poppins;
+    }
+
+    > span:nth-child(odd) {
+        font-size: 2.25rem;
+        font-weight: $bolder;
+    }
+
+    > span:nth-child(even) {
+        position: relative;
+        font-size: 1rem;
+        font-weight: $normal;
+        top: -7px;
+    }
+}
+
+@mixin testimonial {
+    position: absolute;
+    width: 28.75rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 26px;
+    font-family: $font-poppins;
+    color: $navy-blue;
+    background-color: $color-white;
+    box-shadow: 0px 9px 36px 0px rgba(0, 0, 0, 0.2);
+
+    .testimonial {
+        border-radius: 26px;
+        width: calc(inherit - 4rem);
+        padding: 1.5rem 2rem;
+        color: $color-white;
+        font-family: $font-raleway;
+        font-size: 1.125rem;
+        font-weight: $extra-bold;
+        line-height: 1.6875rem;
+        background-color: $light-purple;
+    }
+
+    .card-profile {
+        @include flex-container;
+        justify-content: space-between;
+        padding: 0 2rem;
+        position: relative;
+        top: -0.625rem;
+
+        .profile {
+            color: $navy-blue;
+            font-family: $font-raleway;
+            display: flex;
+            flex-direction: column;
+            // line-height: 1.8rem;
+
+            > span:nth-child(1) {
+                font-weight: $extra-bold;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            > span:nth-child(2) {
+                font-size: 1.125rem;
+                font-weight: 200;
+            }
+        }
+
+        .card-img {
+            position: relative;
+            width: 7.5rem;
+            height: 7.5rem;
+            border-radius: 50%;
+            z-index: 1;
+
+            img {
+                border-radius: 50%;
+                position: relative;
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@mixin course-card {
+    position: relative;
+    display: flex;
+    width: calc(32.875rem - 4rem);
+    height: 26.125rem;
+    padding: 0rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.875rem;
+    border-radius: 24px;
+    background-color: $color-white;
+    margin-top: 3.5rem;
+    margin-bottom: 2.5rem;
+
+    .img {
+        border-radius: 24px;
+        width: 28.875rem;
+        height: 16.25rem;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+
+        img {
+            border-radius: 24px;
+            position: relative;
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+        }
+    }
+
+    .game-title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: $extra-bold;
+        color: $navy-blue;
+        font-family: $font-raleway;
+
+        > span:nth-child(1) {
+            width: 70%;
+            height: 5.62rem;
+            font-size: 1.5rem;
+            line-height: 2.8125rem;
+        }
+
+        > span:nth-child(2) {
+            width: 20%;
+            font-size: 1rem;
+
+            img {
+                position: relative;
+                top: 0.188rem;
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+    }
+
+    .underline {
+        height: 0.5rem;
+        align-self: stretch;
+        background-color: $navy-blue;
+        border-radius: 24px;
+    }
+}
+
+@mixin orange-background {
+    background-color: $color-orange;
+}
+
+@mixin dark-background {
+    background-color: $navy-blue;
+}
+
+//padding
+$page-padding: 3em 7.8em;
+$padding-mobile: 0 2em;
+
+.mobile {
+    display: none;
+}
+
+header {
+    background: $linear-gradient;
+    height: 48rem;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.62rem 7.25rem;
+    // background-color:#6f7dfb;
+
+    #logo {
+        img {
+            width: 4.5rem;
+            height: 2.95rem;
+        }
+    }
+
+    .nav-items {
+        display: flex;
+        align-items: center;
+
+        li + li {
+            margin-left: 3.75rem;
+        }
+
+        a {
+            color: $color-white;
+            font-size: 1rem;
+            font-family: $font-poppins;
+            font-weight: $bolder;
+
+            &:hover {
+                color: $navy-blue;
+            }
+        }
+
+        button {
+            @include button;
+            @include dark-background;
+        }
+    }
+}
+
+#hero-section {
+    @include flex-container;
+    align-items: flex-start;
+    margin-top: 4rem;
+    padding: 0rem 7.25rem;
+
+    .hero-intro {
+        width: 28.5rem;
+        position: relative;
+        top: 1.5rem;
+
+        h1 {
+            color: $color-white;
+            font-family: $font-raleway;
+            font-size: 3.125rem;
+            font-weight: $extra-bold;
+            line-height: 3.90625rem;
+        }
+
+        p {
+            color: $color-white;
+            font-family: $font-poppins;
+            font-size: 1rem;
+            font-weight: $normal;
+            line-height: 2rem;
+            margin-top: 1.13rem;
+            margin-bottom: 1.88rem;
+        }
+
+        button {
+            @include button;
+            @include orange-background;
+
+            & > img {
+                position: relative;
+                top: 0.219rem;
+                right: 0.188rem;
+            }
+        }
+    }
+
+    .hero-img-section {
+        // border: 1px solid red;
+        position: relative;
+        z-index: 1;
+        // overflow: hidden;
+
+        & > img {
+            width: 26.875rem;
+            height: fit-content;
+            position: relative;
+            right: -4rem;
+            z-index: -2;
+        }
+
+        .student-enrolled {
+            @include achievement;
+            top: 7.56rem;
+            left: -10.75rem;
+        }
+
+        .rating {
+            @include achievement;
+            bottom: 13.5rem;
+            left: -13.75rem;
+
+            .star-icon {
+                position: relative;
+                top: 0.313rem;
+                left: 0.313rem;
+                width: 2.75rem;
+                height: 2.75rem;
+            }
+        }
+    }
+}
+
+// testimonial ------------------
+
+#testimonial {
+    @include flex-container;
+    margin: 7.25rem;
+    height: 34rem;
+
+    .testimonial-card {
+        position: relative;
+
+        .line {
+            position: relative;
+            left: 6rem;
+            width: 1.75rem;
+            height: 34.125rem;
+            border-radius: 1.5rem;
+            background: $navy-blue;
+        }
+
+        .card {
+            @include testimonial;
+        }
+
+        .card-1 {
+            top: 2.5rem;
+        }
+
+        .card-2 {
+            bottom: 2.5rem;
+            left: 1.25rem;
+            .orange {
+                @include orange-background;
+            }
+        }
+    }
+
+    .testimonial-intro {
+        color: $navy-blue;
+        width: 34.9rem;
+
+        h2 {
+            font-family: $font-raleway;
+            font-size: 3.75rem;
+            font-weight: $extra-bold;
+            line-height: 4.5rem;
+        }
+
+        p {
+            font-family: $font-poppins;
+            font-size: 1rem;
+            font-weight: $normal;
+            line-height: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1.88rem;
+        }
+
+        button {
+            @include button;
+            @include orange-background;
+        }
+    }
+}
+
+// our courses ----------
+
+.course-background {
+    background: $linear-gradient;
+}
+
+#our-courses {
+    padding: 0 7.5rem;
+    height: 49rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        color: $color-white;
+        text-align: center;
+        font-family: $font-raleway;
+        font-size: 3.75rem;
+        font-weight: $extra-bold;
+    }
+
+    .courses {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .course-card {
+            @include course-card;
+        }
+    }
+
+    button {
+        @include button;
+        @include orange-background;
+        align-self: flex-end;
+    }
+}
+
+// our app
+#get-app {
+    margin: 9.25rem;
+    width: 66.87rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        color: $navy-blue;
+        text-align: center;
+        font-family: $font-raleway;
+        font-size: 3.75rem;
+        font-weight: $extra-bold;
+        line-height: 4.5rem;
+    }
+
+    p {
+        color: $navy-blue;
+        font-family: $font-poppins;
+        font-size: 1rem;
+        font-weight: $normal;
+        line-height: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 4.44rem;
+    }
+
+    .app-stores {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 42.5rem;
+
+        .store {
+            background-color: black;
+            display: flex;
+            width: calc(19.375rem - 4rem);
+            padding: 1.25rem 1.9375rem;
+            align-items: center;
+            gap: 0.875rem;
+
+            .store-logo {
+                width: 3.75rem;
+                height: 3.75rem;
+            }
+
+            span {
+                color: $color-white;
+                text-align: center;
+                font-family: $font-poppins;
+                font-size: 1.5rem;
+                font-weight: $normal;
+                line-height: 3rem;
+            }
+        }
+    }
+}
+
+// footer ------
+footer {
+    background-color: black;
+    height: calc(27.5625rem - 13rem);
+    color: $color-white;
+    padding: 4.73rem 7.25rem;
+    color: $color-white;
+    font-family: $font-poppins;
+    font-size: 1rem;
+    font-weight: $normal;
+
+    .small {
+        position: relative;
+        top: 2rem;
+    }
+
+    .footer-links {
+        @include flex-container;
+        align-items: flex-start;
+
+        .quick-links {
+            position: relative;
+            flex: 1;
+        }
+
+        .course {
+            position: relative;
+            flex: 1;
+        }
+
+        .contact-us {
+            position: relative;
+            flex: 2;
+
+            .email-area {
+                width: calc(32.5625rem - 1rem);
+                height: calc(2.4375rem - 2rem);
+                background-color: $color-white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 90%;
+                border-radius: 10px;
+                padding: 1rem 0.5rem;
+
+                input {
+                    border: none;
+                    outline: none;
+                    width: 65%;
+                    margin-left: 0.8rem;
+                    font-size: 1rem;
+                    font-family: $font-poppins;
+                    font-weight: $normal;
+
+                    &::placeholder {
+                        color: gray;
+                        font-size: 1rem;
+                    }
+                }
+
+                button {
+                    @include button;
+                    width: 8.4375rem;
+                    height: 1.875rem;
+                    background-color: $navy-blue;
+                    font-size: 1rem;
+                    font-weight: $normal;
+                    font-family: $font-poppins;
+                    padding: 0 0;
+                    border-radius: 7px;
+                }
+            }
+        }
+
+        .footer-heading {
+            color: $color-orange;
+            font-family: $font-poppins;
+            font-size: 1.125rem;
+            font-weight: bolder;
+            line-height: 2.25rem;
+        }
+
+        .footer-ul {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 1.5rem;
+            top: 0.88rem;
+
+            .footer-li {
+                color: $color-white;
+                font-family: $font-poppins;
+                font-size: 1rem;
+                font-weight: $normal;
+                line-height: 2rem;
+
+                &:hover {
+                    color: $light-purple;
+                }
+            }
+
+            li {
+                margin: 0.28rem 0;
+            }
+
+            .social-wrapper {
+                margin-top: 1rem;
+                margin-bottom: 1.88rem;
+
+                > img:nth-child(1) {
+                    margin-right: 1.75rem;
+                }
+
+                .social {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// ------------------------ RESPONSIVENESS ------------------
+
+@media only screen and (min-width: 1440px) and (max-width: 1550px) {
+    html {
+        font-size: 16.5px;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1440px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 1190px) and (max-width: 1300px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1190px) {
+    html {
+        font-size: 12.8px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1080px) {
+    html {
+        font-size: 11.5px;
+    }
+}
+
+@media only screen and (min-width: 860px) and (max-width: 960px) {
+    html {
+        font-size: 10.5px;
+    }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 860px) {
+    html {
+        font-size: 9.5px;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 760px) {
+    html {
+        font-size: 7.8px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    html {
+        // font-size: 12px;
+    }
+
+    @mixin button {
+        font-size: 1em;
+        padding: 0.75rem 2rem;
+    }
+
+    @mixin achievement {
+        position: absolute;
+        width: 9.875rem;
+        height: 4.625rem;
+
+        > span:nth-child(odd) {
+            font-size: 1.5rem;
+        }
+
+        > span:nth-child(even) {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    @mixin testimonial {
+        width: 100%;
+
+        .card-profile {
+            .profile {
+                > span:nth-child(1) {
+                    font-size: 1.125rem;
+                }
+
+                > span:nth-child(2) {
+                    font-size: 0.875rem;
+                }
+            }
+
+            .card-img {
+                width: 6.25rem;
+                height: 6.25rem;
+            }
+        }
+    }
+
+    @mixin course-card {
+        width: calc(100% - 4rem);
+        height: 23.1rem;
+
+        .img {
+            width: 100%;
+            height: 14rem;
+        }
+
+        .game-title {
+
+            > span:nth-child(1) {
+                width: 70%;
+                height: 5rem;
+                font-size: 1.4rem;
+                line-height: 2.8rem;
+            }
+        }
+    }
+
+    .mobile {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    header {
+        height: 56rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3.75rem 2rem;
+
+        #logo {
+            img {
+                width: 3.875rem;
+                height: 2.625rem;
+            }
+        }
+
+        .open-icon {
+            cursor: pointer;
+        }
+
+        #nav-bar {
+            display: flex;
+            position: absolute;
+            background-color: black;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 56rem;
+            z-index: 2;
+            top: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: ease-in-out 500ms;
+
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .close-icon {
+                cursor: pointer;
+                position: absolute;
+                top: 3.75rem;
+                right: 4rem;
+                float: right;
+            }
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            li + li {
+                margin-left: 0rem;
+            }
+
+            li {
+                padding: 2rem 0rem;
+            }
+
+            a {
+                font-size: 1.5rem;
+                font-weight: $normal;
+
+                &:hover {
+                    color: $light-purple;
+                }
+            }
+
+            button {
+                @include orange-background;
+            }
+        }
+    }
+
+    #hero-section {
+        flex-direction: column;
+        margin-top: 0rem;
+        padding: 0rem 2rem;
+
+        .hero-intro {
+            width: 21.875rem;
+            position: relative;
+            top: 0rem;
+            margin-bottom: 0rem;
+
+            h1 {
+                font-size: 2.25rem;
+                line-height: 2.8125rem;
+            }
+
+            button {
+                @include button;
+
+                & > img {
+                    position: relative;
+                    top: 0.25rem;
+                    right: 0.188rem;
+                }
+            }
+        }
+
+        .hero-img-section {
+            // border: 1px solid red;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+
+            & > img {
+                width: 19.125rem;
+                height: fit-content;
+                position: relative;
+                right: -5rem;
+                z-index: -2;
+                float: right;
+            }
+
+            .student-enrolled {
+                @include achievement;
+                top: 6.56rem;
+                left: 2rem;
+            }
+
+            .rating {
+                @include achievement;
+                bottom: 10.5rem;
+                left: 1rem;
+
+                .star-icon {
+                    position: relative;
+                    top: 0.113rem;
+                    left: 0.213rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+
+    // testimonial ------------------
+
+    #testimonial {
+        position: relative;
+        @include flex-container;
+        flex-direction: column;
+        margin: 2rem;
+        height: 40rem;
+        padding: 3rem 0 12rem 0;
+
+        .testimonial-card {
+            position: relative;
+            width: 100%;
+
+            .line {
+                position: relative;
+                left: 5.19rem;
+                width: 1.75rem;
+                height: 30.25rem;
+                border-radius: 1.5rem;
+                background: $navy-blue;
+            }
+
+            .card {
+                @include testimonial;
+            }
+
+            .card-1 {
+                top: 2.5rem;
+            }
+
+            .card-2 {
+                bottom: 2.5rem;
+                left: 0rem;
+                .orange {
+                    @include orange-background;
+                }
+            }
+        }
+
+        .testimonial-intro {
+            width: 100%;
+            order: -1;
+
+            h2 {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+
+            p {
+                margin-top: 0.75rem;
+                margin-bottom: 1.88rem;
+            }
+
+            button {
+                position: absolute;
+                bottom: 3rem;
+                right: 0rem;
+            }
+        }
+    }
+
+    // our courses ----------
+    #our-courses {
+        padding: 0 0;
+        height: 75rem;
+
+        h2 {
+            font-size: 1.875rem;
+        }
+
+        .courses {
+            width: 100%;
+            flex-direction: column;
+
+            .course-card {
+                @include course-card;
+            }
+        }
+
+        button {
+            margin-right: 3rem;
+        }
+    }
+
+    // our app
+    #get-app {
+        margin: 7.25rem 2rem;
+        width: calc(100% - 4rem);
+
+        h2 {
+            font-size: 1.875rem;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .app-stores {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            flex-direction: column;
+
+            .store {
+                width: calc(80% - 4rem);
+                margin-bottom: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .store-logo {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+
+    // footer ------
+    footer {
+        height: calc(55.1875rem - 4rem);
+        padding: 2.73rem 2rem;
+        text-align: center;
+
+        .small {
+            position: relative;
+            // top: 10rem;
+        }
+
+        .footer-links {
+            width: 100%;
+            @include flex-container;
+            flex-direction: column;
+
+            .quick-links {
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+
+            .course {
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+
+            .contact-us {
+                width: 100%;
+                margin-bottom: 3rem;
+
+                .email-area {
+                    width: 100%;
+                    height: inherit;
+                    background-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    border-radius: 10px;
+                    padding: 0rem 0rem;
+
+                    input {
+                        border: none;
+                        outline: none;
+                        border-radius: 10px;
+                        padding: 1rem 2rem;
+                        height: calc(2.8375rem - 2rem);
+                        width: calc(100% - 4rem);
+                        margin-left: 0rem;
+                        margin-bottom: 1rem;
+                        font-size: 1.1rem;
+                    
+                    }
+
+                    button {
+                        @include button;
+                        width: 40%;
+                        height: 3rem;
+                        background-color: $navy-blue;
+                        font-size: 1rem;
+                        font-weight: $normal;
+                        font-family: $font-poppins;
+                        padding: 0 0;
+                        border-radius: 7px;
+                    }
+                }
+            }
+
+            .footer-heading {
+                color: $color-orange;
+                font-family: $font-poppins;
+                font-size: 1.125rem;
+                font-weight: bolder;
+                line-height: 2.25rem;
+            }
+
+            .footer-ul {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                left: 0rem;
+                top: 0.88rem;
+
+                .footer-li {
+                    color: $color-white;
+                    font-family: $font-poppins;
+                    font-size: 1rem;
+                    font-weight: $normal;
+                    line-height: 2rem;
+
+                    &:hover {
+                        color: $light-purple;
+                    }
+                }
+
+                li {
+                    margin: 0.28rem 0;
+                }
+
+                .social-wrapper {
+                    margin-top: 1rem;
+                    margin-bottom: 1.88rem;
+
+                    > img:nth-child(1) {
+                        margin-right: 1.75rem;
+                    }
+
+                    .social {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
