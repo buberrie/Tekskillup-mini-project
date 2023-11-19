@@ -247,10 +247,6 @@ $padding-mobile: 0 2em;
     display: none;
 }
 
-body {
-    // overflow-x: hidden;
-}
-
 header {
     background: $linear-gradient;
     height: 48rem;
@@ -579,6 +575,18 @@ footer {
                 width: 90%;
                 border-radius: 10px;
                 padding: 1rem 0.5rem;
+                border: 2px solid transparent;
+
+                &.error {
+                    border: 2px solid $color-red;
+                }
+
+                small {
+                    position: absolute;
+                    top: 10rem;
+                    font-size: 0.8rem;
+                    color: $color-red;
+                }
 
                 input {
                     border: none;
@@ -1090,16 +1098,35 @@ footer {
                     border-radius: 10px;
                     padding: 0rem 0rem;
 
+                    &.error {
+                        border: 2px solid transparent;
+                    }
+
+                    small {
+                        position: relative;
+                        font-size: 0.8rem;
+                        color: $color-red;
+                        top: 0;
+                        margin-top: -.5rem;
+                        margin-bottom: 1rem;
+                    }
+
                     input {
                         border: none;
                         outline: none;
                         border-radius: 10px;
-                        padding: 1rem 2rem;
+                        padding: 1rem 1rem;
                         height: calc(2.8375rem - 2rem);
                         width: calc(100% - 4rem);
                         margin-left: 0rem;
                         margin-bottom: 1rem;
                         font-size: 1.1rem;
+                        border: 2px solid transparent;
+
+                        &.error {
+                            border: 2px solid $color-red;
+                            color: $color-red;
+                        }
                     }
 
                     button {

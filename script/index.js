@@ -19,7 +19,6 @@ document.onclick = function (e) {
 };
 
 // email input validation
-
 const emailEl = document.querySelector('#email');
 const button = document.querySelector('.subcribe')
 
@@ -44,20 +43,30 @@ const isEmailValid = (email) => {
 
 const isRequired = value => value === '' ? false : true;
 
-const showError = (input) => {
+const showError = (input, message) => {
     // get the form-field element
-    const formField = input;
+    const formField = input.parentElement;
+
     // add the error class
     formField.classList.add('error');
+    input.classList.add('error')
 
+    // show error message
+    const error = formField.querySelector('small');
+    error.textContent = message;
 };
 
 const showSuccess = (input) => {
     // get the form-field element
-    const formField = input;
+    const formField = input.parentElement;
 
     // remove the error class
     formField.classList.remove('error');
+    input.classList.remove('error')
+
+    // hide error message
+    const error = formField.querySelector('small');
+    error.textContent = '';
 }
 
 button.addEventListener('click', function (e) {

@@ -534,6 +534,16 @@ footer .footer-links .contact-us .email-area {
   width: 90%;
   border-radius: 10px;
   padding: 1rem 0.5rem;
+  border: 2px solid transparent;
+}
+footer .footer-links .contact-us .email-area.error {
+  border: 2px solid hsl(0, 87%, 67%);
+}
+footer .footer-links .contact-us .email-area small {
+  position: absolute;
+  top: 10rem;
+  font-size: 0.8rem;
+  color: hsl(0, 87%, 67%);
 }
 footer .footer-links .contact-us .email-area input {
   border: none;
@@ -970,16 +980,32 @@ footer .footer-links .footer-ul .social-wrapper .social {
     border-radius: 10px;
     padding: 0rem 0rem;
   }
+  footer .footer-links .contact-us .email-area.error {
+    border: 2px solid transparent;
+  }
+  footer .footer-links .contact-us .email-area small {
+    position: relative;
+    font-size: 0.8rem;
+    color: hsl(0, 87%, 67%);
+    top: 0;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
   footer .footer-links .contact-us .email-area input {
     border: none;
     outline: none;
     border-radius: 10px;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     height: 0.8375rem;
     width: calc(100% - 4rem);
     margin-left: 0rem;
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    border: 2px solid transparent;
+  }
+  footer .footer-links .contact-us .email-area input.error {
+    border: 2px solid hsl(0, 87%, 67%);
+    color: hsl(0, 87%, 67%);
   }
   footer .footer-links .contact-us .email-area button {
     padding: 0.8rem 1.5rem;
